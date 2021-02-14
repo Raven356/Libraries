@@ -22,7 +22,7 @@ void random_sort_vst(int n)
     }
     stop = clock();
     searchtime = stop - start;
-    cout << "Кількість ітерацій вставками = " << iter << "\tЧас втавками = " << searchtime << "\n";
+    cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© ГўГ±ГІГ ГўГЄГ Г¬ГЁ = " << iter << "\tГ—Г Г± ГўГІГ ГўГЄГ Г¬ГЁ = " << searchtime << "\n"; //notification about amount of iterations(iter) and amount of time for the cycle
 }
 void sort_vst(double *x, int n)
 {
@@ -39,7 +39,7 @@ void sort_vst(double *x, int n)
     }
     stop = clock();
     searchtime = stop - start;
-    cout << "Кількість ітерацій вставками = " << iter << "\tЧас втавками = " << searchtime << "\n";
+    cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© ГўГ±ГІГ ГўГЄГ Г¬ГЁ = " << iter << "\tГ—Г Г± ГўГІГ ГўГЄГ Г¬ГЁ = " << searchtime << "\n";//notification about amount of iterations(iter) and amount of time for the cycle
 }
 void random_shekerSort(int count)
 {
@@ -50,78 +50,74 @@ void random_shekerSort(int count)
         }
     double start{}, stop{}, searchtime{};
     start = clock();
-    int left = 0, right = count - 1; // левая и правая границы сортируемой области массива
-    int flag = 1;  // флаг наличия перемещений
-  // Выполнение цикла пока левая граница не сомкнётся с правой
-  // и пока в массиве имеются перемещения
+    int left = 0, right = count - 1; 
+    int flag = 1; 
     while ((left < right) && flag > 0)
     {
         flag = 0;
-        for (int i = left; i<right; i++)  //двигаемся слева направо
+        for (int i = left; i<right; i++)  
         {
-            if (mass[i]>mass[i + 1]) // если следующий элемент меньше текущего,
-            {             // меняем их местами
+            if (mass[i]>mass[i + 1]) 
+            {             
                 double t = mass[i];
                 mass[i] = mass[i + 1];
                 mass[i + 1] = t;
-                flag = 1;      // перемещения в этом цикле были
+                flag = 1;     
             }
         }
-        right--; // сдвигаем правую границу на предыдущий элемент
-        for (int i = right; i>left; i--)  //двигаемся справа налево
+        right--; 
+        for (int i = right; i>left; i--)  
         {
-        if (mass[i - 1]>mass[i]) // если предыдущий элемент больше текущего,
-        {            // меняем их местами
+        if (mass[i - 1]>mass[i]) 
+        {           
             double t = mass[i];
             mass[i] = mass[i - 1];
             mass[i - 1] = t;
-            flag = 1;    // перемещения в этом цикле были
+            flag = 1;   
         }
         }
-        left++; // сдвигаем левую границу на следующий элемент
+        left++; 
         iter++;
     }
     stop = clock();
     searchtime = stop - start;
-    cout << "Кількість ітерацій шейкером = " << iter << "\tЧас шейкером = " << searchtime << "\n";
+    cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© ГёГҐГ©ГЄГҐГ°Г®Г¬ = " << iter << "\tГ—Г Г± ГёГҐГ©ГЄГҐГ°Г®Г¬ = " << searchtime << "\n";//notification about amount of iterations(iter) and amount of time for the cycle
 }
 void shekerSort(double *mass, int count)
 {
-  int left = 0, right = count - 1, iter{}; // левая и правая границы сортируемой области массива
-  int flag = 1;  // флаг наличия перемещений
-  // Выполнение цикла пока левая граница не сомкнётся с правой
-  // и пока в массиве имеются перемещения
+  int left = 0, right = count - 1, iter{}; 
+  int flag = 1; 
   double start, stop;
   start = clock();
   while ((left < right) && flag > 0)
   {
     flag = 0;
-    for (int i = left; i<right; i++)  //двигаемся слева направо
+    for (int i = left; i<right; i++)  
     {
-      if (mass[i]>mass[i + 1]) // если следующий элемент меньше текущего,
-      {             // меняем их местами
+      if (mass[i]>mass[i + 1]) 
+      {             
         double t = mass[i];
         mass[i] = mass[i + 1];
         mass[i + 1] = t;
-        flag = 1;      // перемещения в этом цикле были
+        flag = 1;      
       }
     }
-    right--; // сдвигаем правую границу на предыдущий элемент
-    for (int i = right; i>left; i--)  //двигаемся справа налево
+    right--; 
+    for (int i = right; i>left; i--)  
     {
-      if (mass[i - 1]>mass[i]) // если предыдущий элемент больше текущего,
-      {            // меняем их местами
+      if (mass[i - 1]>mass[i]) 
+      {           
         double t = mass[i];
         mass[i] = mass[i - 1];
         mass[i - 1] = t;
-        flag = 1;    // перемещения в этом цикле были
+        flag = 1;   
       }
     }
-    left++; // сдвигаем левую границу на следующий элемент
+    left++; 
     iter++;
   }
   stop = clock();
-  cout << "Кількість ітерацій шейкером = " << iter << "\tЧас шейкером = " << stop - start << "\n";
+  cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© ГёГҐГ©ГЄГҐГ°Г®Г¬ = " << iter << "\tГ—Г Г± ГёГҐГ©ГЄГҐГ°Г®Г¬ = " << stop - start << "\n";//notification about amount of iterations(iter) and amount of time for the cycle
 }
 
 void random_sort_bulb(int n)
@@ -147,7 +143,7 @@ void random_sort_bulb(int n)
     }
     stop = clock();
     searchtime = stop - start;
-    cout << "Кількість ітерацій бульбашкою = " << iter << "\tЧас бульбашкою = " << searchtime << "\n";
+    cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© ГЎГіГ«ГјГЎГ ГёГЄГ®Гѕ = " << iter << "\tГ—Г Г± ГЎГіГ«ГјГЎГ ГёГЄГ®Гѕ = " << searchtime << "\n";//notification about amount of iterations(iter) and amount of time for the cycle
 }
 void sort_bulb(double *mas, int n)
 {
@@ -168,7 +164,7 @@ void sort_bulb(double *mas, int n)
     }
     stop = clock();
     searchtime = stop - start;
-    cout << "Кількість ітерацій бульбашкою = " << iter << "\tЧас бульбашкою = " << searchtime << "\n";
+    cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© ГЎГіГ«ГјГЎГ ГёГЄГ®Гѕ = " << iter << "\tГ—Г Г± ГЎГіГ«ГјГЎГ ГёГЄГ®Гѕ = " << searchtime << "\n";//notification about amount of iterations(iter) and amount of time for the cycle
 }
 void random_sort_viborom(int n)
 {
@@ -187,7 +183,7 @@ void random_sort_viborom(int n)
         min = i;
         for (int j = i + 1; j < n; j++)
         min = ( mas[j] < mas[min] ) ? j : min;
- // cделаем перестановку этого элемента, поменяв его местами с текущим
+ // cГ¤ГҐГ«Г ГҐГ¬ ГЇГҐГ°ГҐГ±ГІГ Г­Г®ГўГЄГі ГЅГІГ®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ , ГЇГ®Г¬ГҐГ­ГїГў ГҐГЈГ® Г¬ГҐГ±ГІГ Г¬ГЁ Г± ГІГҐГЄГіГ№ГЁГ¬
         if (i != min)
         {
             buf = mas[i];
@@ -198,7 +194,7 @@ void random_sort_viborom(int n)
     }
     stop = clock();
     searchtime = stop - start;
-    cout << "Кількість ітерацій за вибором = " << iter << "\tЧас за вибором = " << searchtime << "\n";
+    cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© Г§Г  ГўГЁГЎГ®Г°Г®Г¬ = " << iter << "\tГ—Г Г± Г§Г  ГўГЁГЎГ®Г°Г®Г¬ = " << searchtime << "\n";//notification about amount of iterations(iter) and amount of time for the cycle
 }
 void sort_viborom(double *mas, int n)
 {
@@ -212,7 +208,6 @@ void sort_viborom(double *mas, int n)
         min = i;
         for (int j = i + 1; j < n; j++)
         min = ( mas[j] < mas[min] ) ? j : min;
- // cделаем перестановку этого элемента, поменяв его местами с текущим
         if (i != min)
         {
             buf = mas[i];
@@ -223,5 +218,5 @@ void sort_viborom(double *mas, int n)
     }
     stop = clock();
     searchtime = stop - start;
-    cout << "Кількість ітерацій за вибором = " << iter << "\tЧас за вибором = " << searchtime << "\n";
+    cout << "ГЉВіГ«ГјГЄВіГ±ГІГј ВіГІГҐГ°Г Г¶ВіГ© Г§Г  ГўГЁГЎГ®Г°Г®Г¬ = " << iter << "\tГ—Г Г± Г§Г  ГўГЁГЎГ®Г°Г®Г¬ = " << searchtime << "\n";//notification about amount of iterations(iter) and amount of time for the cycle
 }
